@@ -895,7 +895,7 @@ License: https://themeforest.net/licenses/standard
 
 	// Contact Form
 	$(function($){
-							$("#contactForm").submit(function(event){
+							$("#contact").submit(function(event){
 								event.preventDefault();
 
 								$.ajax({
@@ -917,7 +917,7 @@ License: https://themeforest.net/licenses/standard
 								});
 							});
 						});
-	}
+
 
 	// window load function
 	$(window).on('load', function() {
