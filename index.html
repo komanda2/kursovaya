@@ -285,19 +285,19 @@
 										<hr class="mt-30"/>
 										<div class="contact-forn">
 											<!-- Форма отправки сообщений -->
-											<form class="mb-0" id="cf" name="cf" action="include/sendemail.php" method="post">
+											<form action="https://formspree.io/komandapinf@gmail.com" method="post">
 												<div class="row">
 
 													<div class="form-process"></div>
 
 													<div class="col-md-6 col-sm-6">
 														<div class="form-group">
-															<input type="text" id="cf-name" name="cf-name" placeholder="Ваше Имя" class="form-control fc-bordered required">
+															<input type="text"name="name" placeholder="Ваше Имя" class="form-control fc-bordered required">
 														</div>
 													</div>
 													<div class="col-md-6 col-sm-6">
 														<div class="form-group">
-															<input type="email" id="cf-email" name="cf-email" placeholder="Ваш Email" class="form-control fc-bordered required">
+															<input type="email" name="email" placeholder="Ваш Email" class="form-control fc-bordered required">
 														</div>
 													</div>
 													<!-- <div class="col-md-12 col-sm-12">
@@ -307,14 +307,14 @@
 													</div> -->
 													<div class="col-md-12 mb-20">
 														<div class="form-group">
-															<textarea name="cf-message" id="cf-message" placeholder="Ваше сообщение" class="form-control fc-bordered required" rows="7"></textarea>
+															<textarea name="message" placeholder="Ваше сообщение" class="form-control fc-bordered required" rows="7"></textarea>
 														</div>
 													</div>
 													<div class="col-md-12 hidden">
 														<input type="text" id="cf-botcheck" name="cf-botcheck" value="" class="form-control form-control-noradius" />
 													</div>
 													<div class="col-md-12 text-center">
-														<button class="btn btn-shadow" type="submit" id="cf-submit" name="cf-submit">Отправить</button>
+														<button class="btn btn-shadow" type="submit">Отправить</button>
 													</div>
 												</div>
 											</form>

@@ -96,11 +96,11 @@ License: https://themeforest.net/licenses/standard
 			}
 		}
 	}
-	
+
 
 	//	Backgrounds
 	function init_ED_PageBackground() {
-		
+
 		// Slideshow Background
 		if (body.hasClass('slideshow-background')) {
 			body.vegas({
@@ -117,7 +117,7 @@ License: https://themeforest.net/licenses/standard
 				]
 			});
 		}
-		
+
 		// Slideshow Background - ZoomOut
 		if (body.hasClass('slideshow-zoom-background')) {
 			body.vegas({
@@ -207,10 +207,10 @@ License: https://themeforest.net/licenses/standard
 
 			$('.player').YTPlaylist(videos, true);
 		}
-		
+
 		// Youtube Multiple Video Background
 		if ($('#youtube-multiple-background').length > 0) {
-			
+
 			var videos = [
 				{videoURL: "0pXYp72dwl0", showControls:false, containment:'.overlay-video',autoPlay:true, mute:true, startAt:0,opacity:1, loop:false, showYTLogo:false, realfullscreen: true, addRaster:true},
 				{videoURL: "9d8wWcJLnFI", showControls:false, containment:'.overlay-video',autoPlay:true, mute:true, startAt:20,opacity:1, loop:false, showYTLogo:false, realfullscreen: true, addRaster:false},
@@ -218,30 +218,30 @@ License: https://themeforest.net/licenses/standard
 			];
 
 			$('.player').YTPlaylist(videos, true);
-			
+
 		}
-		
+
 		if(body.hasClass('mobile')) {
-			$('.video-wrapper, .player').css('display', 'none');	
+			$('.video-wrapper, .player').css('display', 'none');
 		}
-		
+
 		// GMap Background
 		if($('#gmap-background').length){
-			
+
 			var map = new GMaps({
 				div: '#gmap-background',
 				lat: 37.752797,
 				lng: -122.409132,
 				zoom: 14
 			});
-			
+
 			map.addMarker({
 				lat: 37.752797,
 				lng: -122.409132
 			});
-			
+
 		}
-		
+
 		// Parallax Background - only right side
 		EDBlockContainer.on('scroll resize', function() {
 			if(!body.hasClass('mobile')){
@@ -250,27 +250,27 @@ License: https://themeforest.net/licenses/standard
 		});
 
 	}
-	
-	
+
+
 	// Parallax Background
 	function init_ED_Parallax(el) {
 		var windowHeight = window.innerHeight || document.documentElement.clientHeight,
 			scrollTop = el.mcs.top,
 			bottomWindow = scrollTop + windowHeight,
 			speedDivider = 0.25;
-		
+
 		$('.parallax-background').each(function() {
 			var parallaxElement = $(this),
 				parallaxHeight = parallaxElement.outerHeight(),
 				parallaxTop = parallaxElement.offset().top,
 				parallaxBottom = parallaxTop + parallaxHeight,
 				parallaxWrapper = parallaxElement.parents('.parallax-wrapper'),
-				
+
 				section = parallaxElement.parents('section'),
 				sectionHeight = parallaxElement.parents('section').outerHeight(),
 				offSetTop = scrollTop + section[0].getBoundingClientRect().top,
 				offSetPosition = windowHeight + scrollTop - offSetTop;
-				
+
 			if (offSetPosition > 0 && offSetPosition < (sectionHeight + windowHeight)) {
 				var value = ((offSetPosition - windowHeight) * speedDivider);
 
@@ -288,9 +288,9 @@ License: https://themeforest.net/licenses/standard
 			}
 		});
 	}
-	
-	
-	function init_ED_FullscreenFix() {		
+
+
+	function init_ED_FullscreenFix() {
 		if(!(1024 >= getWindowWidth() || body.hasClass('mobile'))) {
 			$('.section.fullscreen-element').each(function(){
 				var elem = $(this),
@@ -310,12 +310,12 @@ License: https://themeforest.net/licenses/standard
 			});
 		}
 	}
-	
-	
+
+
 	// Navigation - only for oneblock and onepage layout
 	function init_ED_WaypointsNav(el) {
 		var scrollblock = el.mcs.content;
-		
+
 		scrollblock.find('.section').each(function(){
 			var section = $(this);
 
@@ -325,15 +325,15 @@ License: https://themeforest.net/licenses/standard
 				if (direction === 'down') {
 					init_ED_UpdateWaypointsNav(activeSection);
 				}
-				
+
 			},{
 				offset: '30%',
 				context: EDBlockContainer,
 			});
-			
+
 			var waypoints = section.waypoint(function(direction) {
 				var activeSection = section.attr('id');
-				
+
 				if (direction === 'up') {
 					init_ED_UpdateWaypointsNav(activeSection);
 				}
@@ -342,11 +342,11 @@ License: https://themeforest.net/licenses/standard
 				offset: '-30%',
 				context: EDBlockContainer,
 			});
-							
+
 		});
 	}
-	
-	
+
+
 	function init_ED_UpdateWaypointsNav(activeSection) {
 		// Select target in navigation
 		if($('.header-nav a[href="#'+ activeSection +'"]').hasClass('scrollto')){
@@ -355,14 +355,14 @@ License: https://themeforest.net/licenses/standard
 		}
 	}
 
-	
+
 	function init_ED_Navigation() {
 		navToggle.off('click');
 		btnLoadContent.off('click');
 		btnScrollTo.off('click');
-		
+
 		if(!(1024 >= getWindowWidth() || body.hasClass('mobile'))) {
-		
+
 			if(EDBlockContainer.hasClass('mCS_destroyed')){
 				EDBlockContainer.mCustomScrollbar({
 					axis: 'y',
@@ -383,15 +383,15 @@ License: https://themeforest.net/licenses/standard
 							init_ED_Parallax(this);
 						},
 						whileScrolling: function(){
-							
+
 							if(this.mcs.top <= -100){
 								$('a.backtotop-block').addClass('active');
 							} else {
 								$('a.backtotop-block').removeClass('active');
 							};
-							
+
 							init_ED_Parallax(this);
-							
+
 						},
 						onScroll: function(){
 							init_ED_Parallax(this);
@@ -421,7 +421,7 @@ License: https://themeforest.net/licenses/standard
 							init_ED_Parallax(this);
 						},
 						whileScrolling: function(){
-							
+
 							if(this.mcs.top <= -100){
 								$('a.backtotop-block').addClass('active');
 							} else {
@@ -429,7 +429,7 @@ License: https://themeforest.net/licenses/standard
 							};
 
 							init_ED_Parallax(this);
-							
+
 						},
 						onScroll: function(){
 							init_ED_Parallax(this);
@@ -444,7 +444,7 @@ License: https://themeforest.net/licenses/standard
 			if(headerNav.css('display', 'none')){
 				headerNav.css('display', 'block');
 			}
-			
+
 			if(navToggle.hasClass('open')){
 				navToggle.removeClass('open');
 			}
@@ -462,34 +462,34 @@ License: https://themeforest.net/licenses/standard
 					});
 				}
 			});
-			
+
 			if(body.hasClass('onepage')){
-				
+
 				btnScrollTo.on('click', function(e) {
 					e.preventDefault();
 
 					var target = $(this).attr('href');
-					
+
 					if(EDSideBlock.hasClass('active')){
 						body.removeClass('sideblock-active');
 						EDSideBlock.removeClass('active');
 						EDHomeBlock.addClass('active');
 					}
-					
+
 					$('.ed-homeblock.active div.homeblock-container').mCustomScrollbar( 'scrollTo', $('.ed-homeblock.active div.homeblock-container').find('.mCSB_container').find(target), {
 						scrollInertia: 800
 					});
-					
+
 					// Select target in navigation
 					if(headerNav.find('a[href="'+ target +'"]')){
 						headerNavElem.removeClass('active');
 						headerNav.find('a[href="'+ target +'"]').parents('li').addClass('active');
 					}
-					
+
 				});
-				
+
 			} else if(body.hasClass('oneblock')){
-				
+
 				btnScrollTo.on('click', function(e) {
 					e.preventDefault();
 
@@ -508,11 +508,11 @@ License: https://themeforest.net/licenses/standard
 						headerNavElem.removeClass('active');
 						headerNav.find('a[href="'+ target +'"]').parents('li').addClass('active');
 					}
-					
+
 				});
-				
+
 			}
-			
+
 			btnLoadContent.on('click', function(e) {
 				e.preventDefault();
 
@@ -522,7 +522,7 @@ License: https://themeforest.net/licenses/standard
 				if($(target).hasClass('active')){
 					return true;
 				}
-				
+
 				if($(target).hasClass('ed-homeblock')){
 					body.removeClass('sideblock-active');
 					EDSideBlock.removeClass('active');
@@ -538,7 +538,7 @@ License: https://themeforest.net/licenses/standard
 						$(target).addClass('active');
 					}
 				}
-				
+
 				// Show 'back to portfolio' button
 				if($(target).hasClass('ed-projectblock')){
 					$('a.backtoportfolio-block').addClass('active');
@@ -552,15 +552,15 @@ License: https://themeforest.net/licenses/standard
 				} else {
 					$('a.backtotop-block').removeClass('active');
 				};
-				
+
 				// Select target in navigation
 				if(headerNav.find('a[href="'+ target +'"]')){
 					headerNavElem.removeClass('active');
 					headerNav.find('a[href="'+ target +'"]').parents('li').addClass('active');
 				}
-				
+
 			});
-				
+
 		} else {
 
 			if(EDBlockContainer.hasClass('mCustomScrollbar')){
@@ -570,11 +570,11 @@ License: https://themeforest.net/licenses/standard
 			if(headerNav.css('display', 'block')){
 				headerNav.css('display', 'none');
 			}
-			
+
 			if(navToggle.hasClass('open')){
 				headerNav.css('display', 'block');
 			}
-		
+
 			navToggle.on('click', function(e) {
 				e.preventDefault();
 				if(!$(this).hasClass('open')){
@@ -585,13 +585,13 @@ License: https://themeforest.net/licenses/standard
 					$(this).removeClass('open');
 				}
 			});
-		
+
 			// Smooth Scroll
-			btnLoadContent.on('click', function() {	
+			btnLoadContent.on('click', function() {
 				var sScroll = $(this),
-					sScroll_target = sScroll.attr('href');					
+					sScroll_target = sScroll.attr('href');
 				if(sScroll_target == null){ sScroll_target = '#'; }
-				
+
 				$.smoothScroll({
 					offset: 0,
 					easing: 'swing',
@@ -600,12 +600,12 @@ License: https://themeforest.net/licenses/standard
 					preventDefault: false
 				});
 			});
-			
-			btnScrollTo.on('click', function() {	
+
+			btnScrollTo.on('click', function() {
 				var sScroll = $(this),
-					sScroll_target = sScroll.attr('href');					
+					sScroll_target = sScroll.attr('href');
 				if(sScroll_target == null){ sScroll_target = '#'; }
-				
+
 				$.smoothScroll({
 					offset: 0,
 					easing: 'swing',
@@ -614,21 +614,21 @@ License: https://themeforest.net/licenses/standard
 					preventDefault: false
 				});
 			});
-			
+
 		}
 	}
 
-	
+
 	// Portfolio
 	function init_ED_MasonryLayout() {
 		if ($('.isotope-container').length > 0) {
 			var $isotopeContainer = $('.isotope-container');
 			var $columnWidth = $isotopeContainer.data('column-width');
-			
+
 			if($columnWidth == null){
 				var $columnWidth = '.isotope-item';
 			}
-			
+
 			$isotopeContainer.isotope({
 				filter: '*',
 				animationEngine: 'best-available',
@@ -664,7 +664,7 @@ License: https://themeforest.net/licenses/standard
 			removalDelay: 300,
 			mainClass: 'mfp-fade'
 		});
-		
+
 		$('.mfp-gallery').each(function() {
 			$(this).magnificPopup({
 				delegate: 'a',
@@ -678,7 +678,7 @@ License: https://themeforest.net/licenses/standard
 				mainClass: 'mfp-fade'
 			});
 		});
-		
+
 		$('.mfp-iframe').magnificPopup({
 			type: 'iframe',
 			iframe: {
@@ -704,7 +704,7 @@ License: https://themeforest.net/licenses/standard
 			removalDelay: 300,
 			mainClass: 'mfp-fade'
 		});
-		
+
 		$('.mfp-ajax').magnificPopup({
 			type: 'ajax',
 			ajax: {
@@ -722,7 +722,7 @@ License: https://themeforest.net/licenses/standard
 				}
 			}
 		});
-		
+
 		$('.open-popup-link').magnificPopup({
 			type: 'inline',
 			midClick: true,
@@ -731,11 +731,11 @@ License: https://themeforest.net/licenses/standard
 			mainClass: 'mfp-fade'
 		});
 	}
-	
+
 	// Flexslider
 	function init_ED_Flexslider() {
-		
-		if ($('.bt-flexslider').length > 0) {			
+
+		if ($('.bt-flexslider').length > 0) {
 			$('.bt-flexslider').each(function() {
 				var $flexsSlider = $(this),
 					fs_effect = $flexsSlider.data('effect'),
@@ -752,7 +752,7 @@ License: https://themeforest.net/licenses/standard
 					fs_directionNav = $flexsSlider.data('directionnav'),
 					fs_keyboard = $flexsSlider.data('keyboard'),
 					fs_pausePlay = $flexsSlider.data('pause-play');
-				
+
 				if(fs_effect == null){ fs_effect = 'slide'; }
 				if(fs_easing == null){ fs_easing = 'swing'; }
 				if(fs_direction == null){ fs_direction = 'horizontal'; }
@@ -761,13 +761,13 @@ License: https://themeforest.net/licenses/standard
 				if(fs_startAt == null){ fs_startAt = 0; }
 				if(fs_slideshowSpeed == null){ fs_slideshowSpeed = 7000; }
 				if(fs_animationSpeed == null){ fs_animationSpeed = 700; }
-				if(fs_randomize == null){ fs_randomize = false; }	
+				if(fs_randomize == null){ fs_randomize = false; }
 				if(fs_video == null){ fs_video = false; }
 				if(fs_pagination == null){ fs_pagination = true; }
 				if(fs_directionNav == null){ fs_directionNav = true; }
 				if(fs_keyboard == null){ fs_keyboard = false; }
 				if(fs_pausePlay == null){ fs_pausePlay = false; }
-				
+
 				$flexsSlider.flexslider({
 					selector: ".slides > div.flex-slide",
 					animation: ''+ fs_effect +'',
@@ -794,16 +794,16 @@ License: https://themeforest.net/licenses/standard
 				});
 			});
 		}
-		
+
 	}
-	
+
 	function init_ED_Plugins() {
-	
+
 		// Responsive Video - FitVids
 		$('.video-container').fitVids();
-		
+
 		// Countdown
-		if (countdown.length > 0) {			
+		if (countdown.length > 0) {
 			countdown.each(function() {
 				var $countdown = $(this),
 					finalDate = $countdown.data('countdown');
@@ -817,20 +817,20 @@ License: https://themeforest.net/licenses/standard
 
 		// Placeholder
 		$('input, textarea').placeholder();
-		
+
 		// Tooltip
 		$('[data-toggle="tooltip"]').tooltip();
-		
+
 		// Popover
 		$('[data-toggle="popover"]').popover();
-	
+
 	}
 
-		
+
 	function init_ED_Mailchimp() {
 		$('.subscribe-form').ajaxChimp({
 			callback: mailchimpCallback,
-			url: "mailchimp-post-url" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".  
+			url: "mailchimp-post-url" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
 		});
 
 		function mailchimpCallback(resp) {
@@ -842,7 +842,7 @@ License: https://themeforest.net/licenses/standard
 				}, 3000);
 			} else if(resp.result === 'error') {
 				$('.subscribe-result').html(resp.msg).fadeIn(1000);
-			}  
+			}
 		}
 
 		$('.subscribe-form input[type="email"]').focus(function(){
@@ -852,34 +852,34 @@ License: https://themeforest.net/licenses/standard
 		$('.subscribe-form input[type="email"]').on('keydown', function(){
 			$('.subscribe-result').fadeOut();
 		});
-		
+
 	}
-	
-	
+
+
 	// Map
 	function init_ED_Maps() {
 		var gmap = $('.gmap');
-		
+
 		if (gmap.length > 0) {
 			gmap.each(function() {
 				var map_height = $(this).data('height');
-				
+
 				if (map_height){
 					gmap.css('height',map_height);
 				}
 			});
 		}
-		
+
 		// GMap Contact
 		if($('#gmap-contact').length){
-			
+
 			var map = new GMaps({
 				div: '#gmap-contact',
 				lat: 37.752797,
 				lng: -122.409132,
 				zoom: 14
 			});
-			
+
 			map.addMarker({
 				lat: 37.752797,
 				lng: -122.409132,
@@ -888,37 +888,35 @@ License: https://themeforest.net/licenses/standard
 					content: '<p class="mb-0">Cali Agency</p>'
 				}
 			});
-			
+
 		}
 	}
 
 
 	// Contact Form
-	function init_ED_ContactForm() {
-		var $contactForm = $('.contact-forn');
-		if( $contactForm.length < 1 ){ return true; }
+	$(function($){
+							$("#contactForm").submit(function(event){
+								event.preventDefault();
 
-		$contactForm.each( function(){
-			var element = $(this),
-				elementAlert = element.attr('data-alert-type'),
-				elementResult = element.find('.contact-form-result');
-
-			element.find('form').validate({
-				submitHandler: function(form) {
-					elementResult.hide();
-
-					$(form).ajaxSubmit({
-						target: elementResult,
-						dataType: 'json',
-						success: function( data ) {
-							elementResult.html( data.message ).fadeIn( 400 );
-							if( data.alert != 'error' ) { $(form).clearForm(); }
-						}
-					});
-				}
-			});
-
-		});
+								$.ajax({
+						    url: "https://formspree.io/komandapinf@gmail.com",
+						    method: "POST",
+						    data: {
+									name: $("#name").val(),
+									email: $("#email").val(),
+									message: $("#message").val()
+								},
+						    dataType: "json"
+								}).done(function(){
+									$("#name").val("");
+									$("#email").val("");
+									$("#message").val("");
+									alert("Сообщение доставлено!");
+								}).fail(function(){
+									alert("Произошла ошибка!")
+								});
+							});
+						});
 	}
 
 	// window load function
@@ -929,7 +927,7 @@ License: https://themeforest.net/licenses/standard
 		init_ED_MasonryLayout();
 		body.addClass('loaded');
 	});
-	
+
 	// document.ready function
 	jQuery(document).ready(function($) {
 		init_ED_PageBackground();
@@ -941,9 +939,9 @@ License: https://themeforest.net/licenses/standard
 		init_ED_Maps();
 		init_ED_ContactForm();
 	});
-	
+
 	// window.resize function
-	$(window).on('resize', function () {		
+	$(window).on('resize', function () {
 		init_ED_Navigation();
 		init_ED_FullscreenFix();
 		init_ED_MasonryLayout();
