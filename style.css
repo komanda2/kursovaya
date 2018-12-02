@@ -106,7 +106,7 @@ iframe {
 [2. Typography]
 */
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
@@ -120,7 +120,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	margin-top: 0;
 	margin-bottom: 15px;
 	position: relative;
@@ -325,7 +325,7 @@ input,
 select,
 textarea {
 	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-style: normal;
 	font-weight: 300;
 }
@@ -600,7 +600,7 @@ section,
 	display: block;
 	position: relative;
 	font-size: 13px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -843,7 +843,7 @@ textarea.form-control {
 label.input-desc {
 	font-size: 14px;
 	font-weight: 600;
-	font-family: 'Open Sans', Verdana;
+	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	margin-bottom: 7px;
 }
@@ -1486,7 +1486,7 @@ body.sideblock-active .close-block {
 .countdown .number {
 	font-size: 80px;
 	text-align: center;
-	font-family: 'Monteserrat', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: 700;
 	line-height: 1;
 }
@@ -1495,7 +1495,7 @@ body.sideblock-active .close-block {
 	display: block;
 	font-size: 14px;
 	text-align: left;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 	position: relative;
 	overflow: hidden;
@@ -2150,7 +2150,7 @@ button.mfp-arrow.mfp-arrow-right::after {
 .alt.nav-tabs > li > a {
 	position: relative;
 	font-size: 13px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -2593,7 +2593,7 @@ button.mfp-arrow.mfp-arrow-right::after {
 
 .portfolio-filter li a {
 	position: relative;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -3113,7 +3113,7 @@ div.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
 
 /* Font */
 .font-opensans {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 }
 
 .subtitle {
