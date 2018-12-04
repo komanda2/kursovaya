@@ -599,7 +599,7 @@ section,
 .header-nav li a {
 	display: block;
 	position: relative;
-	font-size: 13px;
+	font-size: 12px;
 	font-family: 'PT Sans', sans-serif;
 	font-style: normal;
 	font-weight: 700;
@@ -6652,5 +6652,5 @@ body.mobile .mobile-hidden {
 		width: 100%;
 		float: none;
 	}
-	
+
 }
